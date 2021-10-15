@@ -13,6 +13,20 @@ public class Job {
     private PositionType positionType;
     private CoreCompetency coreCompetency;
 
+
+    public String toString() {
+
+        if (name == null) {
+            return "OOPS! This job does not seem to exist.";
+        }
+        return '\n' + "ID:  "+ id + "\n" +
+                "Name: " + name + "\n" +
+                "Employer: " + employer.getValue() +"\n" +
+                "Location: " + location.getValue() +"\n" +
+                "Position Type: " + positionType.getValue() +"\n" +
+                "Core Competency: " + coreCompetency.getValue()+'\n';
+    }
+
     // TODO: Add two constructors - one to initialize a unique ID and a second to initialize the
     //  other five fields. The second constructor should also call the first in order to initialize
     //  the 'id' field.
