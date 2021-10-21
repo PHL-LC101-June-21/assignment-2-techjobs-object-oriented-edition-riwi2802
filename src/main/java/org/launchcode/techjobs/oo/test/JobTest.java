@@ -17,7 +17,7 @@ public class JobTest {
 
 
     @Test
-    public void testSettingJobID() {
+    public void testSettingJobId() {
         Job object1 = new Job();
         Job object2 = new Job();
         assertNotEquals(object1, object2);
@@ -44,7 +44,7 @@ public class JobTest {
                 Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         Job testJob2 = new Job("Product tester", new Employer("ACME"), new
                 Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));;
-                assertEquals(testJob1.equals(testJob2), false);
+                assertFalse(testJob1.equals(testJob2));
     }
 
     @Test
@@ -69,7 +69,8 @@ public class JobTest {
 
     @Test
     public void testToStringHandlesEmptyField() {
-        Job testJob = new Job();
+        Job testJob = new Job("Product tester", new Employer("ACME"), new
+                Location("Desert"),new PositionType(""), new CoreCompetency("Persistence"));
         assertEquals(testJob.toString(), "OOPS! This job does not seem to exist.");
     }
 

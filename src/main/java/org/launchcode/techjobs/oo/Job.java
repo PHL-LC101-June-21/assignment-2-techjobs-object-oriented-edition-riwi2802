@@ -1,5 +1,7 @@
 package org.launchcode.techjobs.oo;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 public class Job {
@@ -16,15 +18,17 @@ public class Job {
 
     public String toString() {
 
-        if (name == null) {
+        if (!(this instanceof Job)) {
             return "OOPS! This job does not seem to exist.";
         }
-        return '\n' + "ID:  "+ id + "\n" +
+
+        return '\n' + "ID: "+ id + "\n" +
                 "Name: " + name + "\n" +
                 "Employer: " + employer.getValue() +"\n" +
                 "Location: " + location.getValue() +"\n" +
                 "Position Type: " + positionType.getValue() +"\n" +
                 "Core Competency: " + coreCompetency.getValue()+'\n';
+
     }
 
     // TODO: Add two constructors - one to initialize a unique ID and a second to initialize the
